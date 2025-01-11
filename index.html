@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>My HTML5 Game Page</title>
+  <meta charset="utf-8">
+  <title>Awesome GameZone</title>
   <!-- Bootstrap CSS -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
+
+  <style>
+    /* Custom styling for hero (full-width background image) */
+    .hero-section {
+      background: url('https://images.unsplash.com/photo-1613761259241-c5443f008323?ixlib=rb-4.0.3&auto=format&fit=crop&w=1320&q=80') 
+                  no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    /* Dark overlay for the background image */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Card hover effect */
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
 <body>
+
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        GameZone
+      <a class="navbar-brand fw-bold" href="#">
+        Awesome GameZone
       </a>
       <button
         class="navbar-toggler"
@@ -57,52 +91,71 @@
     </div>
   </nav>
 
-  <!-- Hero Section / Jumbotron -->
-  <header class="bg-light py-5 mb-5">
-    <div class="container">
-      <div class="text-center">
-        <h1 class="display-4">Welcome to GameZone!</h1>
-        <p class="lead">
-          Your ultimate destination for fun and engaging HTML5 browser games.
-        </p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Play Now</a>
-      </div>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <!-- Dark Overlay -->
+    <div class="hero-overlay"></div>
+    <!-- Content -->
+    <div class="hero-content container">
+      <h1 class="display-3 fw-bold">Welcome to Awesome GameZone</h1>
+      <p class="lead mb-4">
+        Dive into endless hours of fun with our interactive HTML5 games.
+      </p>
+      <a href="#" class="btn btn-primary btn-lg">Start Playing</a>
     </div>
-  </header>
+  </section>
 
-  <!-- Main Content: Game Cards -->
-  <main class="container mb-5">
-    <div class="row">
-      <!-- Game 1 -->
-      <div class="col-md-6 mb-4">
+  <!-- Main Content: Featured Games -->
+  <main class="container my-5">
+    <div class="row g-4">
+      <!-- Game 1 Card -->
+      <div class="col-md-6 col-lg-4">
         <div class="card h-100">
           <img
-            src="https://via.placeholder.com/600x300"
+            src="https://via.placeholder.com/600x300?text=Game+1"
             class="card-img-top"
-            alt="Placeholder Game 1"
+            alt="Game 1 Screenshot"
           />
           <div class="card-body">
-            <h5 class="card-title">Placeholder Game 1</h5>
+            <h5 class="card-title fw-bold">Placeholder Game 1</h5>
             <p class="card-text">
-              Experience the thrill of a classic arcade-style shooter. Survive waves of enemies and rack up the highest score!
+              Test your reflexes in this fast-paced shooter. Level up, unlock new abilities, and compete with friends for the top score!
             </p>
             <a href="#" class="btn btn-primary">Play Now</a>
           </div>
         </div>
       </div>
 
-      <!-- Game 2 (Coming Soon) -->
-      <div class="col-md-6 mb-4">
+      <!-- Game 2 Card -->
+      <div class="col-md-6 col-lg-4">
         <div class="card h-100">
           <img
-            src="https://via.placeholder.com/600x300"
+            src="https://via.placeholder.com/600x300?text=Game+2"
             class="card-img-top"
-            alt="Placeholder Game 2"
+            alt="Game 2 Screenshot"
           />
           <div class="card-body">
-            <h5 class="card-title">Placeholder Game 2</h5>
+            <h5 class="card-title fw-bold">Placeholder Game 2</h5>
             <p class="card-text">
-              A brand-new puzzle-platformer with exciting twists and turns. Stay tuned for the upcoming release!
+              A puzzle platformer that will challenge your mind and reflexes. Solve intricate levels to become the master puzzle solver!
+            </p>
+            <a href="#" class="btn btn-primary">Play Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game 3 Card (Coming Soon) -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img
+            src="https://via.placeholder.com/600x300?text=Game+3"
+            class="card-img-top"
+            alt="Game 3 Screenshot"
+          />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Placeholder Game 3</h5>
+            <p class="card-text">
+              An exciting role-playing adventure with deep storytelling and epic boss battles. Stay tuned for the upcoming launch!
             </p>
             <button class="btn btn-secondary" disabled>Coming Soon</button>
           </div>
@@ -111,18 +164,33 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-3">
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white py-4 mt-5">
     <div class="container text-center">
-      <p class="mb-0">
-        &copy; 2025 GameZone. All rights reserved.
+      <p class="mb-1">
+        &copy; 2025 Awesome GameZone. All rights reserved.
       </p>
+      <small class="d-block mb-2">
+        Follow us on:
+        <a href="#" class="text-white text-decoration-none mx-1">
+          <i class="bi bi-twitter"></i> Twitter
+        </a>
+        <a href="#" class="text-white text-decoration-none mx-1">
+          <i class="bi bi-facebook"></i> Facebook
+        </a>
+        <a href="#" class="text-white text-decoration-none mx-1">
+          <i class="bi bi-instagram"></i> Instagram
+        </a>
+      </small>
     </div>
   </footer>
 
-  <!-- Bootstrap JS (including Popper) -->
+  <!-- Bootstrap JS Bundle (includes Popper) -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   ></script>
+  <!-- Optionally include icons from Bootstrap Icons if you want the social icons above
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  -->
 </body>
 </html>
